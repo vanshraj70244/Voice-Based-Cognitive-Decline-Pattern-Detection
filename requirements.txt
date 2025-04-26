@@ -1,11 +1,9 @@
-numpy
-pandas
+streamlit
+librosa
 matplotlib
 seaborn
+pandas
 nltk
 spacy
-scikit-learn
-librosa
 pydub
 openai-whisper
-ipython
