@@ -1,5 +1,10 @@
+import warnings
+warnings.filterwarnings("ignore", category=SyntaxWarning)
+
+
 import os
 os.environ["STREAMLIT_WATCHER_TYPE"] = "none"  # Disable Streamlit's live reload to avoid torch error
+
 
 import streamlit as st
 import pandas as pd
