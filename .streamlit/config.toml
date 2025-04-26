@@ -1,14 +1,14 @@
 # .streamlit/config.toml
 
 [server]
-runOnSave       = false      # disable live‐reload on save
-headless        = true       # run without opening a browser
+runOnSave       = false
+headless        = true
 port            = 8501
 enableCORS      = false
-maxUploadSize   = 200        # in MB
+maxUploadSize   = 200
 
-[watcher]
-type = "none"                # disable the module‐path watcher completely
+[logger]
+level = "error"      # only show errors, hide info/warnings
 
 [theme]
 primaryColor             = "#1f77b4"
