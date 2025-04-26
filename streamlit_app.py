@@ -1,5 +1,5 @@
 import os
-os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
+#os.environ["STREAMLIT_WATCHER_TYPE"] = "none"
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 os.environ["PYTORCH_JIT"] = "0"
 
