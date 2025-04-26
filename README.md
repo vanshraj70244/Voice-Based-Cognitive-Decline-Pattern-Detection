@@ -15,7 +15,7 @@ The system uses a combination of **deep learning (Whisper)** for transcription a
 
 ## 📸 Demo
 
-👉 [Live App on Streamlit Cloud](https://your-deployed-streamlit-link.streamlit.app/)  
+👉 [Live App on Streamlit Cloud](https://voice-based-cognitive-decline-pattern-detection-tviavtsuu4fegb.streamlit.app/)  
 (*Replace this with your actual link after deployment!*)
 
 ---
