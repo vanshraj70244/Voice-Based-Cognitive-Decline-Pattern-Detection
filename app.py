@@ -1,17 +1,3 @@
-import spacy
-
-# ─── Ensure the English model is installed ────────────────────────────────
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    # If the model isn’t present, download it now…
-    import spacy.cli
-    spacy.cli.download("en_core_web_sm")
-    # …and then load it for real
-    nlp = spacy.load("en_core_web_sm")
-# ────────────────────────────────────────────────────────────────────────────
-
-
 import os
 import numpy as np
 import librosa
