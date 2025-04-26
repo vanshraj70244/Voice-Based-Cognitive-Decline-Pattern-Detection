@@ -11,8 +11,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import IsolationForest
 from pydub import AudioSegment
+AudioSegment.converter = "ffmpeg"  # 👈 Add this line immediately after importing AudioSegment
+
 from collections import Counter
-# import IPython.display as ipd   # ❌ Commented out because Streamlit doesn't need this
+# import IPython.display as ipd
 import time
 
 # Handle whisper import compatibility
