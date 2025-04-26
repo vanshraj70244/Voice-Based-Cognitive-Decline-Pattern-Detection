@@ -1,27 +1,32 @@
-# Byte-compiled / cache files
+# Ignore virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Ignore Python cache files
 __pycache__/
 *.py[cod]
-*.so
-*.pyd
+*$py.class
 
-# Virtual environment
-venv/
-env/
-ENV/
-.venv/
-.ENV/
-.venv.bak/
-env.bak/
+# Ignore environment variables
+.env
 
-# VSCode settings
-.vscode/
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# System files
+# Ignore system files
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
+# Ignore VSCode settings
+.vscode/
+
+# Ignore Streamlit temporary files
+.streamlit/
+
+# Ignore Jupyter Notebook checkpoints (if you ever use them)
+.ipynb_checkpoints/
+
+# Ignore large audio/model files
+*.wav
+*.mp3
+*.pth
+*.pt
