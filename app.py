@@ -28,7 +28,6 @@ except (AttributeError, ImportError):
     model_loader = None
     print("Could not load Whisper model. Check installation.")
 
-nlp = spacy.load("en_core_web_sm")
 
 
 def preprocess_audio(path):
