@@ -1,19 +1,17 @@
 # .streamlit/config.toml
 
 [server]
-# Disable Streamlit’s file‐watcher so it won’t inspect torch internals
-runOnSave = false
+runOnSave       = false      # disable live‐reload on save
+headless        = true       # run without opening a browser
+port            = 8501
+enableCORS      = false
+maxUploadSize   = 200        # in MB
 
-# Run headless on port 8501 and disable CORS
-headless = true
-port = 8501
-enableCORS = false
-
-# Allow larger uploads if you need it (in MB)
-maxUploadSize = 200
+[watcher]
+type = "none"                # disable the module‐path watcher completely
 
 [theme]
-primaryColor = "#1f77b4"
-backgroundColor = "#ffffff"
+primaryColor             = "#1f77b4"
+backgroundColor          = "#ffffff"
 secondaryBackgroundColor = "#f0f2f6"
-font = "sans serif"
+font                     = "sans serif"
