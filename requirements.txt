@@ -1,9 +1,12 @@
 streamlit
-librosa
+numpy
+pandas
 matplotlib
 seaborn
-pandas
 nltk
 spacy
+scikit-learn
+librosa
 pydub
 openai-whisper
+ipython
