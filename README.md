@@ -1,3 +1,11 @@
+<p align="center">
+  <a href="https://your-deployed-streamlit-link.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Demo-Streamlit-blue?style=for-the-badge&logo=streamlit" alt="Live Demo Badge"/>
+  </a>
+</p>
+
+---
+
 # 🧠 Voice-Based Cognitive Decline Detection
 
 A **Streamlit web application** to analyze speech patterns from audio files to detect early signs of cognitive decline based on **audio features** and **text features**.  
