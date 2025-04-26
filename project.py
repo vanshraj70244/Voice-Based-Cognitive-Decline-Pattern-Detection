@@ -12,10 +12,8 @@ import seaborn as sns
 from sklearn.ensemble import IsolationForest
 from pydub import AudioSegment
 from collections import Counter
-import IPython.display as ipd
+# import IPython.display as ipd   # ❌ Commented out because Streamlit doesn't need this
 import time
-
-
 
 # Handle whisper import compatibility
 try:
@@ -26,11 +24,10 @@ except (AttributeError, ImportError):
     print("Could not load Whisper model. Check installation.")
 
 nltk.download('punkt')
-nltk.download('punkt_tab')
-spacy.cli.download("en_core_web_sm")
-nlp = spacy.load("en_core_web_sm")
+# nltk.download('punkt_tab')  # ❌ Commented: 'punkt_tab' does NOT exist in NLTK (this line causes error)
 
-
+# ❌ spacy.cli.download("en_core_web_sm")  # Cannot download on Streamlit Cloud (Permission Denied)
+nlp = spacy.load("en_core_web_sm")  # ✅ Just load the model directly
 
 # 2. Audio Preprocessing
 def preprocess_audio(path):
@@ -72,7 +69,6 @@ def extract_text_features(text):
         "hesitations": hesitations
     }
 
-
 # 5. Risk Scoring Function
 def compute_risk_score(audio_path):
     y, sr = preprocess_audio(audio_path)
@@ -81,7 +77,6 @@ def compute_risk_score(audio_path):
     text_feats = extract_text_features(text)
     features = {**audio_feats, **text_feats, "transcription": text}
     return features
-
 
 # 6. Modeling and Analysis
 def train_model(features_list):
@@ -94,14 +89,12 @@ def train_model(features_list):
     df["anomaly_score"] = -scores
     return df, model
 
-
 # 7. Visualization
 def visualize_features(df):
     sns.pairplot(df.drop(columns=["transcription", "filename"], errors='ignore'))
     plt.show()
 
-
-    # 8. Batch Processing Dataset Folder
+# 8. Batch Processing Dataset Folder
 def process_large_dataset(folder_path, limit=None):
     files = [f for f in os.listdir(folder_path) if f.endswith('.mp3') or f.endswith('.wav')]
     if limit:
@@ -117,15 +110,14 @@ def process_large_dataset(folder_path, limit=None):
             features_list.append(features)
         except Exception as e:
             print(f"Error processing {file}: {e}")
-        time.sleep(0.5)  # To reduce load if necessary
+        time.sleep(0.5)
 
     print(f"\nTotal successfully processed files: {len(features_list)}")
     return features_list
 
-
 # 9. Main Execution
 if __name__ == "__main__":
-    dataset_folder = "D:/VSCODE/cv-corpus-20.0-delta-2024-12-06-en/cv-corpus-20.0-delta-2024-12-06/en/clips"  # Update to your folder containing the audio files
+    dataset_folder = "D:/VSCODE/cv-corpus-20.0-delta-2024-12-06-en/cv-corpus-20.0-delta-2024-12-06/en/clips"  # Update this to your correct dataset path
 
     print("\nStarting batch processing...")
     features_list = process_large_dataset(dataset_folder)
@@ -141,7 +133,6 @@ if __name__ == "__main__":
 
     visualize_features(df)
 
-
-# Optional: Save the features to CSV
+    # Optional: Save the features to CSV
     df.to_csv("audio_features_with_risk_scores.csv", index=False)
     print("\nSaved features with risk scores to audio_features_with_risk_scores.csv")
