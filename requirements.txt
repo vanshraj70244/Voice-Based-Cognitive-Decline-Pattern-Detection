@@ -1,4 +1,5 @@
-﻿streamlit
+streamlit
+numpy<2
 librosa
 matplotlib
 seaborn
