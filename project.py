@@ -13,12 +13,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.ensemble import IsolationForest
+from nltk.tokenize import word_tokenize
 from pydub import AudioSegment
 AudioSegment.converter = "ffmpeg"  # 👈 Add this line immediately after importing AudioSegment
-
 from collections import Counter
 # import IPython.display as ipd
 import time
+import warnings
+warnings.filterwarnings("ignore", category=SyntaxWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
 
 # Handle whisper import compatibility
 try:
@@ -28,10 +32,8 @@ except (AttributeError, ImportError):
     model_loader = None
     print("Could not load Whisper model. Check installation.")
 
-nltk.download('punkt')
-# nltk.download('punkt_tab')  # ❌ Commented: 'punkt_tab' does NOT exist in NLTK (this line causes error)
+#nltk.download('punkt')
 
-# ❌ spacy.cli.download("en_core_web_sm")  # Cannot download on Streamlit Cloud (Permission Denied)
 nlp = spacy.load("en_core_web_sm")  # ✅ Just load the model directly
 
 # 2. Audio Preprocessing
