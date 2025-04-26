@@ -3,7 +3,7 @@ os.environ["STREAMLIT_WATCHER_TYPE"] = "none"  # Disable Streamlit's live reload
 
 import streamlit as st
 import pandas as pd
-from project import compute_risk_score
+from app import compute_risk_score
 
 # --- Streamlit UI ---
 
