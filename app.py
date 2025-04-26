@@ -2,6 +2,11 @@ import os
 import numpy as np
 import librosa
 import nltk
+
+nltk.download('punkt',     quiet=True)
+nltk.download('punkt_tab', quiet=True)
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 # remove seaborn since you’re not using it for plots now
