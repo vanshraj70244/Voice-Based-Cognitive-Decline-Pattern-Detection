@@ -9,7 +9,6 @@ nltk.download('punkt_tab', quiet=True)
 
 import pandas as pd
 import matplotlib.pyplot as plt
-# remove seaborn since you’re not using it for plots now
 from sklearn.ensemble import IsolationForest
 from nltk.tokenize import word_tokenize
 from pydub import AudioSegment
@@ -20,12 +19,8 @@ import warnings
 warnings.filterwarnings("ignore", category=SyntaxWarning)
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
-# ─── ADD THIS ─────────────────────────────────────────────────────────────
-# ensure the Punkt tokenizer is present on every deployment
 nltk.download('punkt', quiet=True)
-# ────────────────────────────────────────────────────────────────────────────
 
-# whisper import compatibility
 try:
     import whisper
     model_loader = whisper.load_model
@@ -90,7 +85,7 @@ def visualize_features(df):
     plt.show()
 
 def process_large_dataset(folder_path, limit=None):
-    # ensure you only match real .wav/.mp3 files
+    # only match real .wav/.mp3 files
     files = [f for f in os.listdir(folder_path)
              if f.lower().endswith(('.mp3', '.wav'))]
     if limit:
