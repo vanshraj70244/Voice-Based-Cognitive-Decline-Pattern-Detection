@@ -16,8 +16,6 @@ The system uses a combination of **deep learning (Whisper)** for transcription a
 ## 📸 Demo
 
 👉 [Live App on Streamlit Cloud](https://voice-based-cognitive-decline-pattern-detection-tviavtsuu4fegb.streamlit.app/)  
-(*Replace this with your actual link after deployment!*)
-
 ---
 
 ## 🚀 Features
@@ -55,5 +53,22 @@ The system uses a combination of **deep learning (Whisper)** for transcription a
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+
+sudo apt update
+sudo apt install -y ffmpeg libsndfile1
+pip install -r requirements.txt
+
+git init
+git remote add origin https://github.com/yourusername/voice-cognitive-decline.git
+git add .
+git commit -m "Initial Commit"
+git push -u origin master
+
+git clone https://github.com/yourusername/voice-cognitive-decline.git
+cd voice-cognitive-decline
+pip install -r requirements.txt
+python -m nltk.downloader punkt
+python -m spacy download en_core_web_sm
+python main.py
 
 
